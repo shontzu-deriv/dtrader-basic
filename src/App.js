@@ -1,7 +1,10 @@
 import "./App.css";
-import React, { useState } from 'react';
+import React, {useState} from "react"
+
+import Form from "./pages/Form"
+import Proposal from "./pages/Proposal"
 import getContractsForSymbol from "./api/contract-for-symbol"
-import getActiveSymbols from "./api/get-active-symbols"
+import getActiveSymbols from "./api/active-symbols"
 import {checkSignal, endCall} from "./api/keep-alive"
 import {getProposal, unsubscribeProposal} from "./api/proposal"
 import {subscribeTicks, unsubscribeTicks, getTicksHistory} from "./api/tickstream"
@@ -14,8 +17,10 @@ function App() {
     .then(()=>setQuote(subscribeTicks))
   }
 
-  return (
+  return ( 
     <div>
+      <Form />
+      <Proposal />
       <header>
         <button className="submitBtn" onClick={subscribe}>Subscribe Tickstream</button>
         {/* <button className="submitBtn" onClick={()=>setQuote(subscribeTicks)}>Subscribe Tickstream</button> */}

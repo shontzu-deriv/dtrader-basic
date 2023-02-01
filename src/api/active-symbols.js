@@ -1,3 +1,4 @@
+// on UI side: the asset_dropdown will filter the asset based on the selected  market in market_dropdown
 import DerivAPIBasic from "https://cdn.skypack.dev/@deriv/deriv-api/dist/DerivAPIBasic";
 
 const app_id = 1089; // Replace with your app_id or leave the current one for testing.
@@ -10,7 +11,7 @@ const api = new DerivAPIBasic({ connection });
 const active_symbols_request = {
   // landing_company: "maltainvest", // Uncomment landing_company if you want to retrieve specific symbols.
   active_symbols: "brief",
-  product_type: "basic"
+  product_type: "basic",
 };
 
 const activeSymbolsResponse = async (res) => {

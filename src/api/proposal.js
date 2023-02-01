@@ -7,7 +7,6 @@ const connection = new WebSocket(
 const api = new DerivAPIBasic({ connection });
 
 const proposal_request = {
-  proposal: 1,
   subscribe: 1,
   amount: 10,
   basis: "payout",
@@ -42,4 +41,4 @@ const unsubscribeProposal = () => {
   connection.removeEventListener("message", proposalResponse, false);
 };
 
-export {getProposal, unsubscribeProposal}
+export { getProposal, unsubscribeProposal };

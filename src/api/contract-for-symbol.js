@@ -1,3 +1,4 @@
+// For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.
 import DerivAPIBasic from "https://cdn.skypack.dev/@deriv/deriv-api/dist/DerivAPIBasic";
 
 const app_id = 1089; // Replace with your app_id or leave the current test app_id.
@@ -6,6 +7,7 @@ const connection = new WebSocket(
 );
 const api = new DerivAPIBasic({ connection });
 
+//TODO: this should come from mobx store not hardcoded
 const contracts_for_symbol_request = {
   contracts_for: "R_50",
   currency: "USD",

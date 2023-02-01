@@ -1,3 +1,4 @@
+//With ticks history you are able to get a collection of past tick times and prices.
 import DerivAPIBasic from "https://cdn.skypack.dev/@deriv/deriv-api/dist/DerivAPIBasic";
 
 const app_id = 35139; // Replace with your app_id or leave as 1089 for testing.
@@ -6,6 +7,7 @@ const connection = new WebSocket(
 );
 const api = new DerivAPIBasic({ connection });
 
+//todo: this should come from ui -> mobx store and not hardcoded
 const ticks_history_request = {
   ticks_history: "R_50",
   adjust_start_time: 1,
